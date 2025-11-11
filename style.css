@@ -1,0 +1,100 @@
+/* Paleta principal:
+   Fundo claro: #F1F8E9
+   Primária: #1A4A28 (verde-floresta)
+   Secundária: #7CB342 (verde-folha)
+   Azul detalhe: #1E88E5
+   Marrom-terra: #795548
+   Texto: #333333
+*/
+
+:root {
+    --bg-main: #F1F8E9;
+    --primary: #1A4A28;
+    --accent: #7CB342;
+    --link: #1E88E5;
+    --earth: #795548;
+    --text: #333333;
+}
+
+/* Reset / base */
+body {
+    color: var(--text);
+    background: linear-gradient(0deg, #ffffff 0%, #F7FFF3 100%);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Logo mark (simples) */
+.logo-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    box-shadow: 0 2px 6px rgba(26, 74, 40, 0.15);
+}
+
+/* Hero */
+#hero {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Cards and info */
+.info-card {
+    background: linear-gradient(180deg, rgba(242, 249, 236, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    border-radius: 10px;
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    filter: brightness(0.95);
+}
+
+/* Carousel image rounded */
+.carousel .carousel-inner img {
+    height: 420px;
+    object-fit: cover;
+}
+
+/* Section spacing tweaks */
+section {
+    scroll-margin-top: 85px;
+    /* for smooth scroll offset below navbar */
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Small responsive tweaks */
+@media (max-width: 768px) {
+    .carousel .carousel-inner img {
+        height: 260px;
+    }
+}
+
+/* Form styles */
+#contactForm .form-control:focus {
+    box-shadow: 0 0 0 .15rem rgba(124, 179, 66, 0.15);
+    border-color: var(--accent);
+}
+
+/* Subtle animations for hover on download button */
+#downloadBtn:hover {
+    transform: translateY(-3px);
+    transition: transform .18s ease;
+}
+
+/* Accessibility: focus styles */
+a:focus,
+button:focus {
+    outline: 3px solid rgba(26, 74, 40, 0.12);
+    outline-offset: 2px;
+}

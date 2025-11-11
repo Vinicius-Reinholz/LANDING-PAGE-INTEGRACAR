@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IntegraCAR — Integração de dados ambientais</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicons (opcional) -->
+    <meta name="theme-color" content="#1A4A28" />
+</head>
+
+<body class="bg-light">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#hero">
+                <img src="Logo-IntegraCAR.png" alt="Logo IntegraCAR" height="40" class="me-2">
+                <span class="fw-bold text-success">IntegraCAR</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dataset">Dataset</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#demo">Demo</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-sm btn-outline-success ms-lg-3"
+                            href="#download">Download</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="hero" class="py-5" style="background-color: #F1F8E9;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-up">
+                    <h1 class="display-5 fw-bold" style="color: #1A4A28;">IntegraCAR</h1>
+                    <p class="lead mb-4" style="color: #333333;">
+                        Integrando dados geoespaciais para o futuro do Cadastro Ambiental Rural.
+                    </p>
+                    <p>
+                        <a class="btn btn-lg btn-primary me-2" href="#dataset"
+                            style="background:#1A4A28; border-color:#1A4A28;">
+                            Conheça o Dataset
+                        </a>
+                        <a class="btn btn-outline-secondary ms-2" href="#demo">
+                            Ver Demonstração
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-5" data-aos="fade-left">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <h5 class="card-title" style="color:#1A4A28">Visão geral rápida</h5>
+                            <p class="card-text" style="color:#333">
+                                O nosso dataset é um conjunto de dados voltado à análise ambiental e segmentação
+                                semântica de áreas rurais.
+                                Ele reúne imagens de satélite e mapas rotulados para identificar diferentes tipos de uso
+                                e cobertura do solo, como vegetação, áreas agrícolas, corpos d’água e zonas urbanas.
+                                Esses dados servem como base para pesquisas, monitoramento ambiental e treinamento de
+                                modelos de inteligência artificial aplicados ao geoprocessamento.
+                                <!--IntegraCAR agrega, padroniza e disponibiliza camadas geoespaciais (GeoJSON, Shapefile,
+                                CSV)
+                                para análise ambiental e conformidade do CAR.-->
+                            </p>
+                            <ul class="list-unstyled mb-0">
+                                <li><strong>Formatos:</strong> *************</li>
+                                <li><strong>Áreas cobertas:</strong>
+                                    **********<!--polígonos de uso do solo, APPs, áreas protegidas-->
+                                </li>
+                                <li><strong>Licença:</strong> ************<!--Uso aberto (ver termos)--></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h2 style="color:#1A4A28">Sobre o projeto</h2>
+                    <p style="color:#333">
+                        O IntegraCAR é uma iniciativa para consolidar e facilitar o acesso a dados do Cadastro Ambiental
+                        Rural (CAR),
+                        combinando técnicas de geoprocessamento, limpeza de dados e interoperabilidade. O objetivo é
+                        apoiar pesquisadores,
+                        órgãos públicos e produtores na tomada de decisões ambientais mais conscientes.
+                    </p>
+                    <p style="color:#333">
+                        A plataforma fornece dados prontos para análise em SIG, relatórios e visualizações interativas.
+                    </p>
+                </div>
+
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="info-card p-3 h-100 shadow-sm border-0">
+                                <h5 class="mb-1" style="color:#1A4A28">Objetivo</h5>
+                                <p class="mb-0" style="color:#333">
+                                    ****************<!--Padronizar e divulgar dados geoespaciais do CAR.--></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="info-card p-3 h-100 shadow-sm border-0">
+                                <h5 class="mb-1" style="color:#1A4A28">Método</h5>
+                                <p class="mb-0" style="color:#333">
+                                    ****************<!--ETL geoespacial, validação topológica e metadados.-->
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <div class="info-card p-3 h-100 shadow-sm border-0">
+                                <h5 class="mb-1" style="color:#1A4A28">Público-alvo</h5>
+                                <p class="mb-0" style="color:#333">*******************<!--Pesquisadores, gestores públicos, ONGs e produtores
+                                    rurais.--></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DATASET -->
+    <section id="dataset" class="py-5" style="background:#FFFFFF;">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <h2 style="color:#1A4A28">Sobre o Dataset</h2>
+                    <p style="color:#333">
+                        O pacote de dados contém camadas vetoriais e tabelas relacionadas ao CAR:
+                    </p>
+                    <ul style="color:#333">
+                        <li><strong>Conteúdo:</strong> polígonos de imóveis, APPs, áreas de preservação, uso do solo.
+                        </li>
+                        <li><strong>Formatos:</strong> GeoJSON, Shapefile (.shp .dbf .shx .prj), CSV com atributos
+                            tabulares.</li>
+                        <li><strong>Coleta:</strong> integração de bases públicas e extração de declarações de CAR, com
+                            tratamento e padronização.</li>
+                        <li><strong>Tamanho aproximado:</strong> depende das camadas — exemplos: GeoJSON (50–200 MB),
+                            Shapefile (compactado).</li>
+                    </ul>
+
+                    <p class="mt-3" style="color:#333">
+                        <small><strong>Observação:</strong> os dados foram anonimizados e possuem metadados com a
+                            procedência e data de extração.</small>
+                    </p>
+                </div>
+
+                <div class="col-lg-6" data-aos="zoom-in">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:#1A4A28">Detalhes técnicos</h5>
+                            <table class="table table-borderless mb-0">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">SRS</th>
+                                        <td>EPSG:4674 / EPSG:4326 (WGS84)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Atributos</th>
+                                        <td>identificador, área_ha, uso_atual, data_declaração</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Licença</th>
+                                        <td>Open Data / CC BY (ver termos)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="mt-3">
+                                <a class="btn btn-success" href="#download"
+                                    style="background:#1A4A28; border-color:#1A4A28;">Ir para Download</a>
+                                <a class="btn btn-outline-secondary ms-2" href="#contato">Solicitar acesso via
+                                    e-mail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEMO (CARROSSEL) -->
+    <section id="demo" class="py-5" style="background: #F7FFF3;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 style="color:#1A4A28" data-aos="fade-right">Demonstração</h2>
+                <p class="mb-0 text-muted" data-aos="fade-left">Exemplos de mapas.</p>
+            </div>
+
+            <div id="demoCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="zoom-in">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner rounded-3 shadow">
+                    <div class="carousel-item active">
+                        <img src="" class="d-block w-100" alt="Mapa exemplo">
+                        <div class="carousel-caption d-none d-md-block"
+                            style="background:rgba(0,0,0,0.4); border-radius:6px;">
+                            <h5>EXEMPLO 1</h5>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="" class="d-block w-100" alt="Mapa exemplo">
+                        <div class="carousel-caption d-none d-md-block"
+                            style="background:rgba(0,0,0,0.4); border-radius:6px;">
+                            <h5>EXEMPLO 2</h5>
+
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="" class="d-block w-100" alt="Mapa exemplo">
+                        <div class="carousel-caption d-none d-md-block"
+                            style="background:rgba(0,0,0,0.4); border-radius:6px;">
+                            <h5>EXEMPLO 3</h5>
+
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#demoCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demoCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="download" class="py-5">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-8" data-aos="fade-right">
+                    <h2 style="color:#1A4A28">Download do Dataset</h2>
+                    <p style="color:#333">
+                        Clique no botão abaixo para baixar o pacote de dados do IntegraCAR. O download contém:
+                    </p>
+                    <ul style="color:#333">
+                        <li>GeoJSON por região</li>
+                        <li>Shapefile compactado (.zip)</li>
+                        <li>CSV com atributos e metadados</li>
+                        <li>Arquivo README com instruções e termos de uso</li>
+                    </ul>
+
+                    <p style="color:#333"><small><strong>Termos:</strong> Ao baixar, você concorda em citar o IntegraCAR
+                            em trabalhos que utilizarem os dados e seguir as restrições de privacidade descritas no
+                            README.</small></p>
+                </div>
+
+                <div class="col-md-4 text-md-end" data-aos="fade-left">
+                    <!-- O botão abaixo deve apontar para seu arquivo real de dataset -->
+                    <a id="downloadBtn" class="btn btn-lg shadow-lg" href="/downloads/integracar-dataset.zip"
+                        role="button"
+                        style="background:#1A4A28; color:white; padding:12px 26px; border-radius:10px; text-decoration:none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                            class="bi bi-download me-2" viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M.5 9.9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H1v3.5A1.5 1.5 0 0 0 2.5 15h11A1.5 1.5 0 0 0 15 13.9V10.4h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 .5.5v3.5A2.5 2.5 0 0 1 13.5 16h-11A2.5 2.5 0 0 1 0 13.9V10.4z" />
+                            <path
+                                d="M7.646 11.854a.5.5 0 0 0 .708 0L11 9.207V1.5a.5.5 0 0 0-1 0v7.293L8.354 10.5a.5.5 0 0 0 .708.707L8 11.268l-.354.354z" />
+                        </svg>
+                        Baixar Dataset
+                    </a>
+                    <div class="mt-3 small text-muted">Tamanho do pacote: ~100 MB (exemplo)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="py-5" style="background:#F1F8E9;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <h2 style="color:#1A4A28">Contato</h2>
+                    <p style="color:#333">Você pode entrar em contato com os participantes do projeto abaixo:</p>
+
+                    <ul class="list-unstyled" style="color:#333">
+                        <li class="mb-2"><strong>Pessoa 1:</strong> nome — contato@gmail</li>
+                        <li class="mb-2"><strong>Pessoa 2:</strong> nome — contato@gmail</li>
+                        <li class="mb-2"><strong>Pessoa 3:</strong> nome — contato@gmail</li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-4" style="background:#ffffff;">
+        <div class="container text-center">
+            <small style="color:#333">IntegraCAR © <span id="year"></span> — Todos os direitos reservados.</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap and dependencies JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
